@@ -1,0 +1,27 @@
+search window - has listbox for found recipes.
+
+new/view/edit windows - take similar code and write subroutines to
+do it all for me.
+
+new/view/edit windows - find a way to center the ingredients and
+directions labels over their respective listboxes.
+
+default focused buttons on each form
+
+method to set the status bar
+
+TODO
+
+Features that I really want to add:
+- Ability to print out recipes from the Viewing window (need to get
+  a working printer first.)
+
+Things I might add if I get bored:
+- Ability to read and write other file formats, like RecipeML.
+- Re-write to curses so I can use it from the console, like I
+  REALLY want.
+- Re-write to perl/Gtk. Gtk has far more widgets, all of which can
+  do more stuff. I would probably just end up layering the code to
+  be mostly GUI independent, as good software design says I should
+  do in the first place.
+- Add place to add any extra information about a recipe - comments, ideas...

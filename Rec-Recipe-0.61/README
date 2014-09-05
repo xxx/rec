@@ -1,0 +1,130 @@
+rec 2.02 - michael dungan - mpd@rochester.rr.com
+http://vatican.yclan.net/index.pl?node_id=401
+(Sorry about the website. I'll attempt to fix that sometime, maybe.)
+
+This is just a small recipe database app I wrote in Perl/Tk because I
+needed something to organize my own recipes, and existing applications
+had way too many dependencies. Why would I want to install MySql just
+to run a recipe database? Sometimes it's sad how out of touch the "geek"
+culture is with the rest of the world.
+
+My aim was simplicity and conciseness. The interface should be fairly
+intuitive for anyone with experience using a GUI.
+
+This code is BSD licensed. The details can be found in the LICENSE file.
+
++++++++++
+
+REQUIREMENTS
+
+perl 5 interpreter (tests fine w/ 5.6 and 5.8.)
+Tk GUI toolkit (/usr/ports/x11-toolkits/tk8something in FreeBSD ports)
+Tk module (/usr/portx/x11-toolkits/p5-Tk in the ports)
+Tk::FileDialog module (/usr/ports/x11-toolkits/p5-Tk-FileDialog in the ports)
+File::Basename (This should be installed by default.)
+Getopt::Std (Ditto)
+
+A GUI. This won't run in a console.
+
+This should run on any platform that supports the requirements.
+
++++++++++
+
+INSTALLATION
+
+Simple:
+
+perl Makefile.PL
+make
+make test (optional)
+make install (as root)
+
+This will install both Rec::Recipe.pm and rec.pl.
+rec.pl will be installed in /usr/local/bin by default.
+Non-Unix users and anyone who doesn't like the default
+can edit Makefile.PL and change the PREFIX line.
+
+If you don't have make installed (shame on you!) do the following:
+
+Copy rec.pl to a place in your path. Make sure it's executable.
+
+Copy Recipe.pm to a place that will get included when you run perl.
+You can set the PERL5LIB environment variable if you want to put
+it somewhere else. I can't do much more here. I don't know how
+your system is set up.
+
+++++++++++
+
+USE
+
+Command line:
+
+-h: Print somewhat helpful usage message
+-f FILENAME: Open FILENAME (a cookbook file) when the program starts.
+
+Alternately, you can set your REC_COOKBOOK environment variable to point
+to the cookbook file you want to open on startup. Passing a filename on
+the command line with the -f flag will override this, however.
+
+If neither is specified, nothing is opened, the default save
+path is ./cookbook.rec.
+
+Searching through recipes is as simple as typing in a word or phrase
+into the 'Search' entry, and hitting Enter or clicking the 'Search'
+button. The 'Reset' button clears the search term and re-lists all
+of your recipes.
+
++++
+
+Buttons (with keyboard shortcuts):
+
+New (Control-n): Create a new recipe
+Edit (Control-e): Edit one or more selected recipes
+Open (Control-o): Open a new cookbook
+Save (Control-s): Save current cookbook
+View (Control-v): View one or more recipes (like edit, but you can't
+  change anything.)
+Delete (Control-d OR the Delete key): Delete one or more recipes (It
+prompts for confirmation. Don't worry.)
+Quit (Control-q): Exit the program. Will prompt to save cookbook if
+most recent changes have not been saved yet.
+
+There are menu options that do the same thing as the buttons.
+
+In the main window, you can click on more than one recipe at a time by
+holding down the Control key while clicking recipes. Edit, View, and
+Delete will work with multiple recipes selected.
+
+You can also double click on a recipe to view it.
+
+Pressing <Escape> will kill a viewing window, as if the 'Dismiss'
+button had been pressed.
+
+When searching for a recipe, pressing the 'Enter' key is the same
+as clicking the 'Search' button.
+
+++++++++++
+
+BUGS
+
+Probably some. If you want to file a bug report, feel free to do so.
+Please include a problem description, the version of rec you're using,
+the RCSID of the rec.pl file (There's a line near the top that says
+my $RCSID = "$stuff$". I need that.) and any error messages spit
+out by the interpreter.
+
+Please send them to mpd@rochester.rr.com.
+
+Feature requests can be sent to the same address.
+
+++++++++++
+
+ETC.
+
+I consider this software done now. I'll still fix bugs as they arise,
+and bug reports can be mailed to me as always, but at this stage, there
+isn't really anything pressing that needs to be added. The software
+does everything I wanted it to do now.
+
+mike - mpd@rochester.rr.com
+5/27/02

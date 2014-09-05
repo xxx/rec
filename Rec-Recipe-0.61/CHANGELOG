@@ -1,0 +1,27 @@
+*** 2.02 Release July 27, 2003
+
+- Minor cleanups in the code, w/ a couple of GUI-fixen.
+
+*** 2.00 Released May 27, 2002
+
+- Search functionality added. Uses UNIX shell syntax, and searches
+  through both title and ingredients for the desired term.
+
+- Minor Bugfixes and GUI cleanups.
+
+*** 1.1 Released April 11, 2002
+
+- Mousewheel support added. Should work in both Unix/Linux and Windows.
+
+- <Esc> will dismiss a View Recipe window.
+
+- POD added to Recipe.pm
+
+- Makefile.PL added to distribution. Should be easier to install now.
+
+- Various GUI cleanups
+
+- Minor bugfixes
+
+
+*** 1.0	Initial Release	April 4, 2002
